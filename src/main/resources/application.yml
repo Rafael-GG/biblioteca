@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:biblioteca2025}
+    username: ${DB_USER:rafaelgg}
+    password: ${DB_PASS:rafaelgg123}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update   # SOLO para desarrollo
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: never
+logging:
+  level:
+    org.hibernate.SQL: info
